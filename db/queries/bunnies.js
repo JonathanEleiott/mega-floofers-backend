@@ -13,3 +13,15 @@ export const createBunny = async({ bunnyName, userId, description, imgURL }) => 
     console.log(`ERROR CREATING BUNNY:`, err);
   }
 }
+
+export const getAllBunnies = async() => {
+  try {
+    const { rows: allBunnies } = await client.query(`
+      SELECT * FROM bunnies;
+    `);
+    return allBunnies;
+  } catch(err) {
+    console.log(`ERROR GETTING BUNNIES FROM DB:`, err);
+    throw new Error(`Error getting bunnies from DB`);
+  }
+}
