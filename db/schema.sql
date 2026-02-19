@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS bunnies;
+DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
@@ -10,7 +10,6 @@ CREATE TABLE users (
 CREATE TABLE bunnies (
   id SERIAL PRIMARY KEY,
   name VARCHAR(30) NOT NULL,
-  is_adopted BOOLEAN NOT NULL,
   description TEXT,
   img_url VARCHAR(60) NOT NULL,
   user_id INTEGER REFERENCES users(id)
