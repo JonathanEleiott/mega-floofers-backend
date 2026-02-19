@@ -11,6 +11,6 @@ CREATE TABLE bunnies (
   id SERIAL PRIMARY KEY,
   name VARCHAR(30) NOT NULL,
   description TEXT,
-  img_url VARCHAR(200) NOT NULL,
+  img_url VARCHAR(60) NOT NULL,
   user_id INTEGER REFERENCES users(id)
 );
