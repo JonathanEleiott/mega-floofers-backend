@@ -2,7 +2,10 @@ import express from 'express';
 const app = express();
 
 import client from './db/client.js';
-client.connect();
+await client.connect();
+
+import cors from 'cors';
+app.use(cors());
 
 app.get('/me', (req, res, next) => {
   res.send("all good in bunny land");
