@@ -1,6 +1,11 @@
 import express from 'express';
 const app = express();
 
+if (process.env.NODE_ENV === "production") {
+  options.ssl = { rejectUnauthorized: false };
+}
+
+
 import client from './db/client.js';
 await client.connect();
 
