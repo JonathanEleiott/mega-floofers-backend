@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --env-file=.env server.js",
+    "start": "node server.js",
     "start:dev": "nodemon --env-file=.env server.js",
     "db:schema": "psql -d mega_floofers -f ./db/schema.sql",
     "db:seed": "node --env-file=.env ./db/seed.js",
